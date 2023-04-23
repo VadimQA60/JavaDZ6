@@ -13,7 +13,7 @@ public class StatsService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int totalofallsales(long[] sales) {
+    public int TotalOFallSales(long[] sales) {
         int MaxMonth = 0; // Максимальная сумма всех продаж
 
         for (int i = 0; i < sales.length; i++) {
@@ -38,25 +38,41 @@ public class StatsService {
         return AllMount(sales) / sales.length;
     }
 
-    public long AverageAbove(long[] sales) {
-        int AverageAbove = 0;
-        for (long month : sales) {
-            if (month > YearAverage(sales)) {
-                AverageAbove++;
+    public int AverageAbove(long[] sales) {
+        long AverageAbove = YearAverage(sales);
+
+        int month = 0;
+        for (long number : sales) {
+            if (number > AverageAbove) {
+                month = month + 1;
+
             }
 
         }
-        return AverageAbove;
+        return month;
     }
 
-    public long AverageBelow(long[] sales) {
-        int AverageBelow = 0;
-        for (long month : sales) {
-            if (month < YearAverage(sales)) {
-                AverageBelow++;
-            }
-        }
-        return AverageBelow;
-    }
 
+
+        public int AverageBellow ( long[] sales){
+            long AverageBellow = YearAverage(sales);
+
+                int month = 0;
+                for (long number : sales) {
+                    if (number < AverageBellow) {
+                        month = month + 1;
+                    }
+                }
+                return month;
+    }
 }
+
+
+
+
+
+
+
+
+
+
