@@ -8,17 +8,17 @@ public class Main {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int resultMin = service.minSales(sales);
-        int TotalOFallSales = service.TotalOFallSales(sales);
-        long AllMount = service.AllMount(sales);
-        long YearAverage = service.YearAverage(sales);
-        long AverageAbove = service.AverageAbove(sales);
-        long AverageBellow = service.AverageBellow(sales);
+        int totalOFallSales = service.totalOFallSales(sales);
+        long allMount = service.allMount(sales);
+        long yearAverage = service.yearAverage(sales);
+        long averageAbove = service.averageAbove(sales);
+        long averageBellow = service.averageBellow(sales);
 
         System.out.println(resultMin);
-        System.out.println(TotalOFallSales);
-        System.out.println(AllMount);
-        System.out.println(YearAverage);
-        System.out.println(AverageAbove);
-        System.out.println(AverageBellow);
+        System.out.println(totalOFallSales);
+        System.out.println(allMount);
+        System.out.println(yearAverage);
+        System.out.println(averageAbove);
+        System.out.println(averageBellow);
     }
 }

@@ -13,7 +13,7 @@ public class StatsService {
         return minMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int TotalOFallSales(long[] sales) {
+    public int totalOFallSales(long[] sales) {
         int MaxMonth = 0; // Максимальная сумма всех продаж
 
         for (int i = 0; i < sales.length; i++) {
@@ -24,7 +24,7 @@ public class StatsService {
         return MaxMonth + 1;
     }
 
-    public long AllMount(long[] sales) {
+    public long allMount(long[] sales) {
         int TheAmount = 0;
         for (long sale : sales) {
             TheAmount += sale;
@@ -33,17 +33,17 @@ public class StatsService {
         return TheAmount;
     }
 
-    public long YearAverage(long[] sales) {
+    public long yearAverage(long[] sales) {
 
-        return AllMount(sales) / sales.length;
+        return allMount(sales) / sales.length;
     }
 
-    public int AverageAbove(long[] sales) {
-        long AverageAbove = YearAverage(sales);
+    public int averageAbove(long[] sales) {
+        long averageAbove = yearAverage(sales);
 
         int month = 0;
         for (long number : sales) {
-            if (number > AverageAbove) {
+            if (number > averageAbove) {
                 month = month + 1;
 
             }
@@ -53,17 +53,16 @@ public class StatsService {
     }
 
 
+    public int averageBellow(long[] sales) {
+        long averageBellow = yearAverage(sales);
 
-        public int AverageBellow ( long[] sales){
-            long AverageBellow = YearAverage(sales);
-
-                int month = 0;
-                for (long number : sales) {
-                    if (number < AverageBellow) {
-                        month = month + 1;
-                    }
-                }
-                return month;
+        int month = 0;
+        for (long number : sales) {
+            if (number < averageBellow) {
+                month = month + 1;
+            }
+        }
+        return month;
     }
 }
 
